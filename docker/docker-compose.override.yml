@@ -1,0 +1,6 @@
+# Override: Skip Docker Ollama — we use native Ollama on this Mac Studio
+# Qdrant only. Ollama runs natively at http://127.0.0.1:11434
+services:
+  ollama:
+    deploy:
+      replicas: 0
