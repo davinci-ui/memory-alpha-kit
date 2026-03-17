@@ -11,7 +11,7 @@ import urllib.request
 from typing import Optional
 
 QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
-COLLECTION_NAME = "prometheus_logs"
+COLLECTION_NAME = os.environ.get("QDRANT_COLLECTION", "conversation_logs")
 
 def get_user_context(user_id: str, limit: int = 5) -> str:
     """Get recent context for user - returns formatted summary."""

@@ -21,12 +21,12 @@ Memory Alpha is a long-term memory and identity system for OpenClaw agents. It p
 └─────────────┬───────────────────┬─────────────────┘
               │                   │
               │ memory_search     │ skills
-              │ (built-in)        │ (prometheus-logs, etc.)
+              │ (built-in)        │ (memory-logs, etc.)
               │                   │
 ┌─────────────▼───────────────────▼─────────────────┐
 │              Qdrant Vector DB                      │
 │                                                    │
-│  prometheus_logs  — session conversations          │
+│  conversation_logs  — session conversations          │
 │  memories_tr      — extracted facts & knowledge    │
 │                                                    │
 │  Embeddings: snowflake-arctic-embed2 (768-dim)     │
@@ -44,7 +44,7 @@ Memory Alpha is a long-term memory and identity system for OpenClaw agents. It p
 
 ### Retrieval
 1. Agent receives a question about past work/decisions
-2. `prometheus-logs` skill triggers semantic search
+2. `memory-logs` skill triggers semantic search
 3. Query → embedded → Qdrant similarity search
 4. Top results returned with source citations
 
@@ -67,7 +67,7 @@ Both run as Docker containers. See `docker/docker-compose.yml`.
 
 | Collection | Content | Use Case |
 |------------|---------|----------|
-| `prometheus_logs` | Raw conversation turns | "What did we discuss about X?" |
+| `conversation_logs` | Raw conversation turns | "What did we discuss about X?" |
 | `memories_tr` | Extracted facts & knowledge | "What do we know about Y?" |
 
 ## Embedding Model

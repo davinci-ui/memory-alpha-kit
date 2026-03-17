@@ -36,7 +36,7 @@ from datetime import datetime
 from typing import List, Optional, Dict, Any
 
 QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
-COLLECTION_NAME = "prometheus_logs"
+COLLECTION_NAME = os.environ.get("QDRANT_COLLECTION", "conversation_logs")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434") + "/v1"
 
 # In-memory cache for deduplication (per process)

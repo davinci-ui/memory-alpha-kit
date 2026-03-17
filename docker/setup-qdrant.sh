@@ -4,8 +4,8 @@
 
 QDRANT_URL="${QDRANT_URL:-http://localhost:6333}"
 
-echo "Creating prometheus_logs collection..."
-curl -s -X PUT "${QDRANT_URL}/collections/prometheus_logs" \
+echo "Creating conversation_logs collection..."
+curl -s -X PUT "${QDRANT_URL}/collections/conversation_logs" \
   -H 'Content-Type: application/json' \
   -d '{
     "vectors": {

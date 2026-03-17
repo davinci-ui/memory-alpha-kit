@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Daily memory backup script with batch upload support
-Backs up all memory files to prometheus_logs collection in Qdrant
+Backs up all memory files to conversation_logs collection in Qdrant
 Uses batch uploads (256 points) for 20x performance improvement
 Avoids duplicates by checking existing dates
 
@@ -27,7 +27,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
-COLLECTION_NAME = "prometheus_logs"
+COLLECTION_NAME = os.environ.get("QDRANT_COLLECTION", "conversation_logs")
 OLLAMA_URL = "http://localhost:11434/v1"
 MEMORY_DIR = Path("/root/.openclaw/workspace/memory")
 DEFAULT_BATCH_SIZE = 256

@@ -35,7 +35,7 @@ from typing import List, Optional, Dict, Any, Tuple
 
 # Configuration
 QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
-COLLECTION_NAME = "prometheus_logs"
+COLLECTION_NAME = os.environ.get("QDRANT_COLLECTION", "conversation_logs")
 OLLAMA_EMBED_URL = "http://localhost:11434/v1"
 MEMORY_DIR = Path("/root/.openclaw/workspace/memory")
 DEFAULT_BATCH_SIZE = 50

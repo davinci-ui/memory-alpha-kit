@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Memory Alpha Search - Semantic search for the USS Prometheus knowledge base
+Memory Alpha Search - Semantic search for the Memory Alpha knowledge base
 
 Queries the memory_alpha Qdrant collection with semantic search.
 """
