@@ -29,7 +29,7 @@ Memory Alpha is a long-term memory and identity system for OpenClaw agents. It p
 │  conversation_logs  — session conversations          │
 │  memories_tr      — extracted facts & knowledge    │
 │                                                    │
-│  Embeddings: snowflake-arctic-embed2 (768-dim)     │
+│  Embeddings: snowflake-arctic-embed2 (1024-dim)     │
 │  Via: Ollama (local, zero API cost)                │
 └────────────────────────────────────────────────────┘
 ```
@@ -73,7 +73,7 @@ Both run as Docker containers. See `docker/docker-compose.yml`.
 ## Embedding Model
 
 **snowflake-arctic-embed2** (via Ollama)
-- 768 dimensions
+- 1024 dimensions
 - Cosine similarity
 - Zero API cost (runs locally)
 - ~1.1GB model size

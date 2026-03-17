@@ -9,7 +9,7 @@ curl -s -X PUT "${QDRANT_URL}/collections/conversation_logs" \
   -H 'Content-Type: application/json' \
   -d '{
     "vectors": {
-      "size": 768,
+      "size": 1024,
       "distance": "Cosine"
     }
   }' | python3 -m json.tool
@@ -20,7 +20,7 @@ curl -s -X PUT "${QDRANT_URL}/collections/memories_tr" \
   -H 'Content-Type: application/json' \
   -d '{
     "vectors": {
-      "size": 768,
+      "size": 1024,
       "distance": "Cosine"
     }
   }' | python3 -m json.tool
@@ -36,4 +36,4 @@ echo ""
 echo "✅ Memory Alpha infrastructure ready!"
 echo "   Qdrant: ${QDRANT_URL}"
 echo "   Ollama: ${OLLAMA_URL}"
-echo "   Model: snowflake-arctic-embed2 (768-dim embeddings)"
+echo "   Model: snowflake-arctic-embed2 (1024-dim embeddings)"

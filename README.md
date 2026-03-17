@@ -26,7 +26,7 @@ bash setup-qdrant.sh
 This gives you:
 - **Qdrant** (vector DB) on port 6333
 - **Ollama** (embeddings) on port 11434
-- **snowflake-arctic-embed2** model (768-dim, zero API cost)
+- **snowflake-arctic-embed2** model (1024-dim, zero API cost)
 
 ### 2. Create Your Agent
 
