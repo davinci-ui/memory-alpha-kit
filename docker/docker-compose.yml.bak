@@ -27,23 +27,6 @@ services:
     volumes:
       - ollama_data:/root/.ollama
 
-  hindsight:
-    image: hindsightai/hindsight:latest
-    container_name: hindsight
-    restart: unless-stopped
-    ports:
-      - "8888:8888"   # API port
-      - "9999:9999"   # UI port
-    environment:
-      - LLM_PROVIDER=ollama
-      - LLM_MODEL=glm-4.7-flash
-      - LLM_BASE_URL=http://host.docker.internal:11434/v1
-      - MEMORY_BANKS=office,davinci,hal,sherry
-    volumes:
-      - $HOME/.hindsight-docker:/home/hindsight/.pg0
-    depends_on:
-      - ollama
-
 volumes:
   qdrant_data:
   ollama_data:
